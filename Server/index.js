@@ -8,10 +8,15 @@ const enquiryRouter = require('./App/routes/web/enquiryRoutes');
 let path = require("path");
 const _dirname = path.resolve()
 
+const corsOptions = {
+    origin:"https://mern-fullstack-crud-app-production-716d.up.railway.app",
+    credentials:true
+}
+
 let cors =require('cors')
 // require('dotenv').config()
 let app = express();
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 
 //Routes
@@ -24,7 +29,7 @@ app.get("*" , (req,res)=>{
 mongoose.connect(process.env.DBURL)
 .then(()=>{
     console.log("Connected to MongoDB") 
-app.listen(process.env.PORT || 5000, ()=>{
+app.listen(process.env.PORT || 8020, ()=>{
     console.log('Server is running')
 })
 }).catch((err)=>{

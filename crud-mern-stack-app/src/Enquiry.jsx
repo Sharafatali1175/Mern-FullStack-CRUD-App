@@ -17,7 +17,7 @@ const Enquiry = () => {
     let saveEnquiry = (e)=>{
         e.preventDefault()
         if(formData._id){
-          axios.put(`http://localhost:8020/api/website/enquiry/update/${formData._id}`,formData)
+          axios.put(`https://mern-fullstack-crud-app-production-716d.up.railway.app/api/website/enquiry/update/${formData._id}`,formData)
           .then((res)=>{
             toast.success('Enquiry Update Successfully')
             setFormData({
@@ -30,7 +30,7 @@ const Enquiry = () => {
             getAllenquiry()
           })
         } else {
-         axios.post(`http://localhost:8020/api/website/enquiry/insert`,formData)
+         axios.post(`https://mern-fullstack-crud-app-production-716d.up.railway.app/api/website/enquiry/insert`,formData)
          .then((res)=>{
           toast.success('Enquiry Saved Successfully')
           setFormData({
@@ -45,7 +45,7 @@ const Enquiry = () => {
     }
 
     let getAllenquiry = () =>{
-        axios.get(`http://localhost:8020/api/website/enquiry/view`)
+        axios.get(`https://mern-fullstack-crud-app-production-716d.up.railway.app/api/website/enquiry/view`)
         .then((res)=>{
            return res.data
         })

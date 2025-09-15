@@ -13,7 +13,7 @@ import { toast } from 'react-toastify';
 const EnquiryList = ({ data, getAllenquiry, setFormData }) => {
 
   let deleteRow = (delid) => {
-    axios.delete(`http://localhost:8020/api/website/enquiry/delete/${delid}`)
+    axios.delete(`https://mern-fullstack-crud-app-production-716d.up.railway.app/api/website/enquiry/delete/${delid}`)
       .then((res) => {
         toast.success('Enquiry Deleted Successfully')
         getAllenquiry()
@@ -21,7 +21,7 @@ const EnquiryList = ({ data, getAllenquiry, setFormData }) => {
   }
 
   let editRow = (editid) => {
-    axios.get(`http://localhost:8020/api/website/enquiry/single/${editid}`)
+    axios.get(`https://mern-fullstack-crud-app-production-716d.up.railway.app/api/website/enquiry/single/${editid}`)
       .then((res) => {
         let data = res.data;
         setFormData(data.enquiry)
