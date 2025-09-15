@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon Server/index.js",
     "build": "npm install && npm install --prefix crud-mern-stack-app && npm run build --prefix crud-mern-stack-app",
-    "start": "nodemon Server/index.js"
+    "start": "node Server/index.js"
   },
   "keywords": [],
   "author": "",
